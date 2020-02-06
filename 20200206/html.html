@@ -75,13 +75,14 @@
 			success: function(data) {
 				//				console.log(data);
 				var len = data.length; //데이터의 갯수
-								console.log(len);
+						console.log(111);
+						console.log(len);
 				for (var i = 0; i < len; i++) {
 					console.log(data[i].item_img);
 					console.log(data[i].item_name);
 					console.log(data[i].item_price);
 						var item =
-							'<div class="item">'+
+							'<div class="item '+data[i].manufacture+'">'+
 								'<img src="'+data[i].item_img+'" alt="">'+
 								'<div class="item_desc">'+
 									'<h2>'+data[i].item_name+'</h2>'+
@@ -97,11 +98,20 @@
 				//				console.log(data);
 			}
 
+		}) // $.ajax({ end
+		$("body > input").click(function(){
+			var man = $(this).val();
+			console.log(man);
+			if(".item").css("display","none");
 		})
 	})
 </script>
 
 <body>
+	<input type="radio" name="man" value="all" checked >전체
+	<input type="radio" name="man" value="apple">애플
+	<input type="radio" name="man" value="samsung">삼성
+
 	<div class="item_list">
 		<div class="item">
 			<img src="http://placehold.it/250x250" alt="">
