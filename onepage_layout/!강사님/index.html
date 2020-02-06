@@ -1,0 +1,173 @@
+<!-- onepage_scroll.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Onepage Scroll</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.textillate.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/progressbar.min.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <section id="title_area">
+            <h1>Portfolio Page</h1>
+            <p>Web Publishing & Frontend Dev.</p>
+            <div id="particle"></div>
+        </section>
+        <section id="profile_area">
+            <h1>Profile</h1>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="profile_detail">
+                <div class="detail_left">
+                    <p>생각하고 실천하는 OO살 OOO</p>
+                    <h1>twogenesis</h1>
+                    <img src="http://placehold.it/400x400">
+                    <p>대구광역시 중구 남일동에 거주</p>
+                    <p>밤낮없이 언제 어디서나 010-1234-5678로 연락 가능합니다.</p>
+                    <p>SNS계정은 abcdefg@naver.com 입니다.</p>
+                    <p>항상 열려있으니 실시간 상담 가능합니다.</p>
+                </div>
+                <div class="detail_right">
+                    <h1>Personality</h1>
+                    <div class="p_item">
+                        <div class="img_box">
+                            <img src="http://placehold.it/100x100">
+                        </div>
+                        <p>진취적</p>
+                    </div>
+                    <div class="p_item">
+                        <div class="img_box">
+                            <img src="http://placehold.it/100x100">
+                        </div>
+                        <p>창의적</p>
+                    </div>
+                    <div class="p_item">
+                        <div class="img_box">
+                            <img src="http://placehold.it/100x100">
+                        </div>
+                        <p>적극적</p>
+                    </div>
+                    <div class="p_item">
+                        <div class="img_box">
+                            <img src="http://placehold.it/100x100">
+                        </div>
+                        <p>리더십</p>
+                    </div>
+                    <div class="p_item">
+                        <div class="img_box">
+                            <img src="http://placehold.it/100x100">
+                        </div>
+                        <p>감각적</p>
+                    </div>
+                    <div class="p_item">
+                        <div class="img_box">
+                            <img src="http://placehold.it/100x100">
+                        </div>
+                        <p>노력파</p>
+                    </div>
+                </div>
+                <div class="center_line"></div>
+            </div>
+        </section>
+        <section id="ability_area">
+            <h1>Abilities</h1>
+            <div class="ability_list">
+                <div class="graph" id="html">
+                    <h2>HTML</h2>
+                </div>
+                <div class="graph" id="css">
+                    <h2>CSS</h2>
+                </div>
+                <div class="graph" id="js">
+                    <h2>Javascript</h2>
+                </div>
+                <div class="graph" id="jq">
+                    <h2>jQuery</h2>
+                </div>
+                <div class="graph" id="db">
+                    <h2>Database</h2>
+                </div>
+                <div class="graph" id="php">
+                    <h2>PHP</h2>
+                </div>
+            </div>
+        </section>
+        <section id="works_area">
+            <h1>Works</h1>
+            <div class="gallery_list">
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000">
+                    <img src="http://placehold.it/250x250">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/fab">
+                    <img src="http://placehold.it/250x250/fab">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/afb">
+                    <img src="http://placehold.it/250x250/afb">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/abf">
+                    <img src="http://placehold.it/250x250/abf">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/abf">
+                    <img src="http://placehold.it/250x250/abf">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/abf">
+                    <img src="http://placehold.it/250x250/abf">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/abf">
+                    <img src="http://placehold.it/250x250/abf">
+                </div>
+                <div class="gallery_item" data-raw="http://placehold.it/1280x3000/abf">
+                    <img src="http://placehold.it/250x250/abf">
+                </div>
+            </div>
+
+            <div class="gallery_detail">
+                <a href="#" id="gallery_close">&times;</a>
+                <img src="http://placehold.it/500x500">
+                <div class="scope">
+                    <button id="expand">+</button>
+                    <span class="ratio">100%</span>
+                    <button id="contract">-</button>
+                </div>
+            </div>
+        </section>
+        <section id="contact_area">
+            <h1>Contact</h1>
+            <div class="contact_list">
+                <div class="contact_item">
+                    <img src="images/noun_chatting_3095143.png">
+                    <p>KakaoTalk : ABCDEFG</p>
+                </div>
+                <div class="contact_item">
+                    <img src="images/noun_envelope_38691.png">
+                    <p>e-mail : asd@qwe.com</p>
+                </div>
+                <div class="contact_item">
+                    <img src="images/noun_Social_1809722.png">
+                    <p>SNS : @asdqwe</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="pager_area">
+        <div class="pager active"></div>
+        <div class="pager"></div>
+        <div class="pager"></div>
+        <div class="pager"></div>
+        <div class="pager"></div>
+    </div>
+</body>
+</html>

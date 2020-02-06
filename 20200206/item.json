@@ -1,0 +1,13 @@
+//item.json
+[//시작 대괄호
+	{//아이탬 하나당 중괄호
+		"item_img":"http://placehold.it/250x250/fab",
+		"item_name":"APPLE iPhone 11 Pro",
+		"item_price":"1,800,760원"
+	},
+	{//아이탬 하나당 중괄호
+		"item_img":"http://placehold.it/250x250/afb",
+		"item_name":"Samsung GALXYNOTE 10",
+		"item_price":"982,350원"
+	}
+]

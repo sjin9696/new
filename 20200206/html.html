@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	.item_list {
+		width: 1080px;
+		margin: 0 auto;
+		font-size: 0;
+	}
+
+	.item {
+		width: 250px;
+		margin: 10px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+		overflow: hidden;
+		display: inline-block;
+	}
+
+	.item_desc {
+		padding: 10px;
+		position: relative;
+	}
+
+	.item_desc h2 {
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	.item_desc p {
+		font-size: 14px;
+		color: #555;
+	}
+
+	.item_desc button {
+		position: absolute;
+		bottom: 10px;
+		background-color: transparent;
+		border: 1px solid #000;
+		color: #000;
+		padding: 5px 10px;
+	}
+
+	.item_desc button:hover {
+		background-color: #000;
+		color: #fff;
+	}
+
+	.item_desc button:nth-of-type(1) {
+		right: 10px;
+	}
+
+	.item_desc button:nth-of-type(2) {
+		right: 90px;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--//서버환경 x 브라켓 환경이 아니면 확인 할수 없음.-->
+<!--php, 서버 데이터 환경-->
+<script>
+	$(function() {
+		$.ajax({
+			dataType: "json",
+			type: "get",
+			url: "item.json",
+			success: function(data) {
+				//				console.log(data);
+				var len = data.length; //데이터의 갯수
+								console.log(len);
+				for (var i = 0; i < len; i++) {
+					console.log(data[i].item_img);
+					console.log(data[i].item_name);
+					console.log(data[i].item_price);
+						var item =
+							'<div class="item">'+
+								'<img src="'+data[i].item_img+'" alt="">'+
+								'<div class="item_desc">'+
+									'<h2>'+data[i].item_name+'</h2>'+
+									'<p>'+data[i].item_price+'</p>'+
+									'<button>장바구니</button>'+
+									'<button>구매하기</button>'+
+								'</div>'+
+							'</div>';
+						$("item_list").append(item);
+				}
+			},
+			error: function(data) {
+				//				console.log(data);
+			}
+
+		})
+	})
+</script>
+
+<body>
+	<div class="item_list">
+		<div class="item">
+			<img src="http://placehold.it/250x250" alt="">
+			<div class="item_desc">
+				<h2>아이템의 이름</h2>
+				<p>아이템의 가격</p>
+				<button>장바구니</button>
+				<button>구매하기</button>
+			</div>
+		</div>
+
+	</div>
+</body></html>

@@ -252,6 +252,8 @@ img {
 		float: left;
 		margin: 10px;
 		cursor: pointer;
+		opacity: 0;
+		transition:  opacity: 0.5s;
 	}
 
 	.gallery_detail {
@@ -309,8 +311,44 @@ img {
 	font-family: 'Bangers', cursive;
 	color: #f4f4f4;
 	font-size: 90px;
+	text-align: center;
 	letter-spacing: 5px;
 	margin-top: 10px;
 	margin-bottom: 30px;
+}
+#Contact_area > h1 {
+	font-family: 'Bangers', cursive;
+	color: #f4f4f4;
+	font-size: 90px;
+	text-align: center;
+	letter-spacing: 5px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.Contacts_list{
+	width: 1300px;
+	margin: 0 auto;
+}
+.Contacts_item {
+	float: left;
+	height: 400px;
+	width: 600px;
+}
+.Contacts_item > img{
+	width: 300px;
+	margin: auto 0;
+
+}
+.Contacts_item > p{
+	font-family: 'Bangers', cursive;
+	color: #f4f4f4;
+	font-size: 40px;
+	text-align: center;
+	letter-spacing: 5px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.mail_icon {
+	color: #fff; font-size: 100px;
 }
 

@@ -84,6 +84,9 @@ $(function(){
 			if(i==2){
                 $("#ability_area > h1").textillate("in");
             }
+			if(i==3){
+                $("#works_area > h1").textillate("in");
+            }
         });
         $(".pager").removeClass("active");
         $(".pager").eq(i).addClass("active");
@@ -157,6 +160,21 @@ $(function(){
             }
         }
     });
+   $("#works_area > h1").textillate({
+			autoStart:false,
+			in:{
+				effect:"rotateInDownLeft",
+				sync:true,
+				 callback:function(){
+					 var len = $(".gallery_item").length;
+					 for(var i=0; i<len;i++)
+						 {
+                			$(".gallery_item").eq(i).css("transition-delay",100*i+"ms");
 
+						 }
+                $(".gallery_item").css("opacity",1);
+            }
+        }
+    }); //$("#works_area > h1").textillate({ end
 
 })
