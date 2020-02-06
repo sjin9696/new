@@ -1,0 +1,179 @@
+<!--document.html-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>New HMTL document by NewJect</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+ $("document").ready(function(){
+
+//스크롤 이벤트는 스크롤 바의 위치에 영향을 주는 이벤트 로써 기존 문법과 달리 현재의 창을 기준으로 잡기 위해 선택자를 윈도우로 선택하며 문자형으로 작성해선 안된다.
+//	 var pos;
+	 $(window).scroll(function(){
+		 //스크롤 이벤트 타값을 가지고와 변수에 저장한다.
+		 var pos = $(window).scrollTop();
+		 console.log(pos);
+		 if(pos > 500)
+		 {
+			 $("aside").fadeIn(1500);
+			 //모든 변수를 다 설정해야 속도가 빠르다.
+		 }
+		 else{
+			 $("aside").fadeOut(1500);
+		 }
+		 if(pos >= 800)
+		 {
+			  $(".indicator").fadeIn(1500); // 나타나는 시간
+		 }else{
+			  $(".indicator").fadeOut(1500); //사라지는 시간
+		 }
+		 if(pos >=3000){
+			$(".indicator ul li").removeClass("on").eq(3).addClass("on");
+		}else if(pos >= 2000){
+			$(".indicator ul li").removeClass("on").eq(2).addClass("on");
+		}else if(pos >= 1000){
+			$(".indicator ul li").removeClass("on").eq(1).addClass("on");
+		}else{
+			$(".indicator ul li").removeClass("on").eq(0).addClass("on");
+		}
+
+		 if(pos >=150){
+			 $("nav").addClass("fixed");
+		 }else{
+			 $("nav").removeClass("fixed");
+		 }
+
+	 }) //scroll end
+//		$(".indicator ul li").removeClass("on").eq(0).addClass("on");
+
+		$(".indicator ul li, nav ul li").click(function(){
+			//인디케이터 리스트를 클릭 했다면, 변수명 i값에 현재의 인덱스 값을 저장한다.
+			//클릭마다 i값이 변경되므로 i값은 유동성을 가지고 있다.
+
+			var i = $(this).index();
+			$("html, body").stop().animate({
+				scrollTop: i *1000
+			})
+		})
+
+	/*  $(".indicator ul li").eq(pos/1000).addClass("on");
+	  $(".indicator ul li").eq(2).addClass("on");*/
+
+	 var $aside = $("aside");// 구동 속도때문에 변수로 선언한다.
+	 $("aside").click(function(){
+		 $("html, body").stop().animate({
+				scrollTop: 0
+			},1000)
+	 })
+}); // jquery end
+
+ </script>
+ <style>
+	 //속도를 위해서 코드는 한줄로 작성하도록 할것.
+	 //한줄이냐 여러줄이냐의 의견이 나왔다.
+	 //한줄로 바꾸는 프로그램 알려 달라고 하기.
+	 *{margin: 0;padding: 0;}
+	 ol,ul{
+		 list-style: none;
+	 }
+	 img{
+		 vertical-align: middle;
+	 }
+	 a{
+		 text-decoration: none;
+		 color: #000;
+	 }
+	 body{
+		 height: 4000px;
+	 }
+	 .section{
+		 width: 100%;
+		 height: 1000px;
+		 overflow: hidden;
+	 }
+	 .section:nth-child(1){
+		 background-color: #abf;
+	 }
+	 .section:nth-child(2){
+		 background-color: #fba;
+	 }
+	 .section:nth-child(3){
+		 background-color: #fab;
+	 }
+	 .section:nth-child(4){
+		 background-color: #baf;
+	 }
+	 .indicator{
+		 position: fixed;
+		 right: 20px;
+		 top: 50%;
+		 transform: translateY(-50%);
+		 display: none;
+	 }
+	 .indicator ul li {
+		 margin: 20px 0;
+		 color: #fff;
+		 cursor: pointer;
+		 font-size: 30px;
+	 }
+	 .indicator ul li.on{
+		 color: #000;
+		 font-size: 30px;
+	 }
+	 aside{
+		 position: fixed;
+/*		 w50>h50>bgc>b20>r20>bdrs10>cup*/
+		 width: 50px;
+		 height: 50px;
+		 background-color: #fff;
+		 bottom: 20px;
+		 right: 20px;
+		 border-radius: 10px;
+		 cursor: pointer;
+		 display: none;
+		 text-align: center;
+		 font-size: 40px;
+	 }
+	 nav{
+		 width: 100%;
+		 position: fixed;
+		 height: 70px;
+		 background-color: #fff;
+		 top: 150px;
+	 }
+	 nav.fixed{
+		 position: fixed;
+		 top: 0;
+	 }
+	 nav li{
+		 display: inline-block;
+	 }
+	</style>
+<body>
+	<div class="section"></div>
+	<div class="section"></div>
+	<div class="section"></div>
+	<div class="section"></div>
+
+	<div class="indicator">
+		<ul>
+			<li>●</li>
+			<li>●</li>
+			<li>●</li>
+			<li>●</li>
+		</ul>
+	</div>
+	<aside>▲</aside>
+	<nav>
+		<ul>
+			<li><a href="#">메뉴1</a></li>
+			<li><a href="#">메뉴2</a></li>
+			<li><a href="#">메뉴3</a></li>
+			<li><a href="#">메뉴4</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

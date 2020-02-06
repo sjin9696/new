@@ -1,0 +1,50 @@
+<!--mouseWheel.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseWheel</title>
+	<script src = "jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		var ttop = 100;
+		var windowHeight = $(window).height();
+		var sectionHeight = $("#first").height();
+		var top = 100;
+		$(function(){
+			$(window).on("mousewheel DOMMousewheel",function(e){
+				var dt = e.originalEvent.wheelDelta;
+				ttop = 0;
+//				if(dt <0){
+				console.log("아래로돌림",dt); //마이너스
+				console.log("top",ttop+dt); //마이너스
+				ttop = ttop + dt;
+				if(ttop < 0) {ttop=0;}
+				//현재 차으이 높이 (세로길이) 가져오기
+				var sectionHeight = $("#first").height();
+				console.log("sectionHeight",sectionHeight);
+				console.log("windowHeight",windowHeight);
+				if(top < windowHeight- sectionHeight){
+					top = windowHeight - sectionHeight;
+				}
+
+				$("#first").css("top", top+"px");
+			});
+
+
+		})
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		#first{
+			height:5000px;
+			background-image: url("http://placekitten.com/1000/800");
+			top: -100px;
+		}
+		body{overflow: hidden;}
+
+	</style>
+</head>
+<body>
+	<section id="first"></section>
+</body>
+</html>

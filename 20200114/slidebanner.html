@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slidebanner</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			var i=1;
+			$(window).on("mousewheel DOMMousewheel",function(e){
+				var dt = e.originalEvent.wheelDelta;
+				if(dt <0){
+					i++;
+				}
+				else{
+					i--;
+				}
+				$(".contents").css("margin-left",i*-300+"px");
+			});
+			/*var i = 2;
+			$(".contents").css("margin-left",i*-300+"px");
+			i++;
+			$(".contents").css("margin-left",i*-300+"px");*/
+		});
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.banner{width: 300px;height: 200px;
+		margin: 30px auto; overflow: hidden;}
+		.contents{width: 1500px; font-size: 0;
+		margin-left: 0; transition: margin 1s;}
+		.contents > img{float: left;}
+		img{vertical-align: middle;}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<div class="contents">
+			<img src="http://placehold.it/300x200" alt="">
+			<img src="http://placehold.it/300x200/fab" alt="">
+			<img src="http://placehold.it/300x200/afb" alt="">
+			<img src="http://placehold.it/300x200/abf" alt="">
+			<img src="http://placehold.it/300x200/666" alt="">
+		</div>
+	</div>
+
+</body>
+</html>

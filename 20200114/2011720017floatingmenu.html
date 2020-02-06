@@ -1,0 +1,90 @@
+<!--2011720017floatingmenu.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none;}
+		a{text-decoration: none;color: #000;}
+		body{
+			height: 5000px;
+		}
+		.floatingmenu{
+			position: absolute;
+			width: 100px;
+			height: 350px;
+			background-color: #6449ca;
+			right: 50px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.floatingmenu ul li{
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+		}
+		.floatingmenu ul li a{
+		color: #fff;
+		}
+		.floatingmenu aside{
+			height: 50px;
+			background-color: rgba(255,252,255,0.4);
+		}
+		.floatingmenu aside i.fas{
+			display: block;
+			text-align: center;
+			line-height: 50px;
+			font-size: 30px;
+			color: #fff;
+			cursor: pointer;
+		}
+
+	</style>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+
+	<script>
+	$("document").ready(function(){
+		var position = 242;
+//		var position = parseInt($("floatingmenu").css("top"));
+		console.log(position);
+		//parseInt = 해당데이터의 값 중 다른 값을 제외하고 수치만 가져오는 속성.
+		$(window).scroll(function(){
+			var pos = $(window).scrollTop(),
+				new_pos = position + pos;
+
+			$(".floatingmenu").stop().animate({
+				top : new_pos
+			},400)
+		})// scroll end
+
+		$("aside").click(function(){
+			$("html, body").stop().animate({
+				scrollTop: 0
+			})
+		})
+		$("a").click(function(e){
+			e.preventDefault();
+			//고유의 기능을 막는 기능
+		})
+	}) // jQuery end
+	</script>
+</head>
+<body>
+	<div class="floatingmenu">
+		<ul>
+			<li><a href="#">item1</a></li>
+			<li><a href="#">item2</a></li>
+			<li><a href="#">item3</a></li>
+			<li><a href="#">item4</a></li>
+			<li><a href="#">item5</a></li>
+		</ul>
+		<aside>
+<!--			i.fas.fa-arrow-circle-up-->
+			<i class="fas fa-arrow-circle-up"></i>
+		</aside>
+	</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!--jqueryui.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jqueryui</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/datepicker-ko.js"></script>
+	<script>
+	$(function(){
+		$(".box").draggable({
+			//axis:"x",	//x,y	//해당축으로만 움직임.
+			grid:[20,20],
+			handle:"#handle"
+		});
+
+		$("#date").datepicker({
+			numberOfMonths:2
+		});
+		$("#dialog").dialog({
+			title:"Dialog Message",
+			buttons:[
+				{
+					text:"확인",
+					click:function(){
+						$(this).dialog("close");
+					}
+				},
+				{
+					text:"취소",
+					click:function(){
+						$(this).dialog("close");
+					}
+				}
+			]
+		});
+	})
+	</script>
+	<style>
+		*{padding: 0;margin: 0;}
+		.box{width: 150px;height: 200px;background-color: #fab;cursor: default;}
+		.box > h1{text-align: center;background-color: #000;color: #fff;padding: 10px 0;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1 id= "handle">Handle</h1>
+	</div>
+
+	<input type="text" id="date">
+	<div id="dialog">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus voluptas ad non quaerat numquam eum minus cumque nam nisi deleniti iste et fuga, eveniet, pariatur rerum animi delectus odio distinctio. Dolores, cumque, consequatur laboriosam repellat odio possimus sint labore incidunt aliquam ratione error facere totam in, nobis quaerat, provident voluptas!</p>
+	</div>
+</body>
+</html>

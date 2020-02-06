@@ -1,0 +1,23 @@
+<script src="../200103-jQuery/jquery/jquery-3.4.1.min.js"></script>
+<script>
+
+function func1(){
+console.log("func1()");
+}
+	//변수의 지역성
+var a = 0;
+var b = 0;
+function func2(aa,bb){
+	console.log(a,b);
+	console.log(aa,bb);
+}
+func2();
+func2(10,20);
+console.log(a,b);
+console.log(aa,bb);
+function func3(aa){
+	return aa;
+}
+	console.log(fun3()); //로그가 캐치한다. try ~ catch
+
+</script>

@@ -1,0 +1,75 @@
+<!--js.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+</head>
+<script>
+	<!--반복문-->
+
+	var i = 0;
+	if(i<3)
+	{
+		console.log("if = ",i);
+		i++;
+	}
+	i=0;
+	while(i<3)
+	{
+		console.log("while++ =",i);
+		i++;
+	}
+	i = 3;
+	while(i > -1)
+	{
+		console.log("while-- =",i);
+		i--;
+
+	}
+	var j;
+	for(i=2;i<14;i++)
+	{
+		console.log("**구구단 x ",i,"단**");
+		for(j = 1; j<14; j++)
+			{
+				console.log(
+					i,"x",j,"=",i*j,"\t\t",(i+1),"x",j,"=",(i+1)*j);
+			}
+	}
+
+	//interval (특정시간에 한 번씩 실행한다.
+	//지정한 시간마다 실행되는 개념 . 쉬는 시간 시계.
+	//페이지 동작에는 영향을 미치지 않는다.
+	//var 변수이름 = setintercal(funtion(){
+	//},시간(ms));
+	var s=0,m=0,h=0;
+	var interval = setInterval(function(){
+		if(s == 60){
+			if(m == 60){h++; m=0;}
+			else{m++;}
+			s=0;
+		}
+		else{s++;}
+
+		//m=s/60;
+		//h=s/360;
+		console.log(h,':',m,":",s);
+	},100);
+	//일정시간이 지나고 나서 1번 실행 - timeout
+	var timeout = setTimeout(function(){
+		console.log("timeout");
+		clearInterval(interval);
+	},1000)
+
+//조건문
+
+
+//삼항연산
+
+
+</script>
+<body>
+
+</body>
+</html>

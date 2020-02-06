@@ -1,0 +1,67 @@
+<!--review.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Review</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			$("#open").click(function(){
+				$(".box, #open").toggleClass("open");
+			})
+			var w = $(".box").css("width");
+			console.log(w+100);
+			w = $(".box").width();
+			console.log(w);
+			console.log(w+100);
+
+			//$(".box").width(500);
+			//$(".box").height(500);
+
+			//위치
+			var a = $(".box").offset().left;
+			console.log(a);
+
+			//this 페어런트 파인드
+			$(".cart").click(function(){
+				$(this).css("background-color","red");
+				var name = $(".item > p").html();
+				console.log(name);
+				name = $(this).parent().find("p").css("background-color","blue");
+			})
+		})
+	</script>
+	<style>
+		.box {width: 100px;height: 0px;background-color: #afb;
+			transition:height 0.3s;}
+		#open:after {
+			content: "열기";
+		}
+		.box.open {height: 300px;}
+		#open.open:after{
+			content: "닫기";
+		}
+	</style>
+</head>
+<body>
+	<div class="item">
+		<div class="img_area">
+			<img src="http://placehold.it/150x150" alt="">
+		</div>
+		<p>상품이름1</p>
+		<button class="purchase">구매하기</button>
+		<button class="cart">장바구니</button>
+	</div>
+	<div class="item">
+		<div class="img_area">
+			<img src="http://placehold.it/150x150" alt="">
+		</div>
+		<p>상품이름2</p>
+		<button class="purchase">구매하기</button>
+		<button class="cart">장바구니</button>
+	</div>
+	<div class="box"></div>
+	<button id="open"></button>
+</body>
+</html>

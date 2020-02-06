@@ -1,0 +1,30 @@
+<!--reviewww.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reviewww</title>
+</head>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<style>
+	body {
+		height: 1000px;
+	}
+</style>
+<script>
+	$(function() {
+		$(window).scroll(funtion(){
+			console.log("scroll");
+			var t = $(window).scrollTop();
+			console.log(t);
+		if(t >= 1000){
+			$(body).css("background-color","#fab");
+		}
+
+		})
+	})
+</script>
+
+<body>
+
+</body></html>

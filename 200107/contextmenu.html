@@ -1,0 +1,74 @@
+<!--contextmenu.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>contextmenu</title>
+	<link rel="stylesheet" href="icons/css/fontawesome.css">
+	<link rel="stylesheet" href="icons/css/solid.min.css">
+	<link rel="stylesheet" href="icons/css/brands.min.css">
+	<link rel="stylesheet" href="icons/css/regular.min.css">
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			//우클릭 방지 기능
+			$(window).contextmenu(function(event){
+				//event 파라미터 발생한 이벤트에 대한 상세 정보들을 담고 있는
+				event.preventDefault();
+
+				//기본기능을 prevent막는다라는 뜻
+//				alert("우클릭 금지");
+				$(".menu").css("left", event.pageX+"px");
+				$(".menu").css("top", event.pageY"px");
+
+				$(".menu").css("display","block");
+			})
+
+			$("#link").click(function(event){
+				event.preventDefault();  // 기본 기능을 막았지 때문에 링크 기능을 제공하지 않는다.
+
+			})
+		})
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.menu {
+			border: 1px solid #666;
+			width: 100px;
+			position: absolute;
+			display: none;
+		}
+		.menu a{
+			font-size: 14px;color: #333;text-decoration: none;
+			display: block; padding: 5px 3px;
+			border-bottom: 1px solid #666;
+		}
+		.menu a:last-child {border-bottom: 0;}
+		.menu a:hover {background-color: #666; color: #fff;}
+		.menu a i{
+			display: inline-block; width: 15px;
+		}
+	</style>
+</head>
+<body>
+	<a id="link" href="http://daum.net">link</a>
+	<div class="menu">
+		<a href="http://naver.com" target="_blank">
+			<i class="far fa-file"></i>
+			새 파일
+		</a>
+		<a href="#">
+			<i class="far fa-folder-open"></i>
+			열기
+		</a>
+		<a href="#">
+			<i class="far fa-save"></i>
+			저장
+		</a>
+		<a href="#">
+			<i class="far fa-copy"></i>
+			복사
+		</a>
+	</div>
+</body>
+</html>

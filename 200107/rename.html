@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rename</title>
+	<script src = "jquery/jquery-3.4.1.min.js"></script>
+</head>
+	<script>
+		$(function(){
+//			$(".box").namespace("box"); //태그의 내용 가져오기
+//			var content = $(".box").html(); //태그의 내용 가져오기
+//			console.log(content);
+//			var url = $("#link").attr();
+//			console.log(url);
+			$("#link").attr("href","https://naver.com");
+			$("#link").attr("target","_blank");
+			$(".box2").addClass("big");
+			$(".box2").removeClass("box2");
+
+			$("#btn").mouseup(function(){
+				alert("버튼을 클릭했습니다.");
+			})
+		})
+	</script>
+	<style>
+		.box, .box2{width: 100px; height: 100px;background-color: #fab;}
+		.big {width: 300px;height: 300px;}
+	</style>
+<body>
+	<a href="#" id="link">LINK</a>
+	<div class="box">Box content</div>
+	<div class="box2"></div>
+	<button id="btn">버튼클릭</button>
+
+</body>
+</html>

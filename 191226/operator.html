@@ -1,0 +1,45 @@
+<!--operator.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>operator</title>
+</head>
+<style>
+	#box {
+		width: 100px;height: 100px;background-color: #fab;
+		transition: 5s;
+	}
+	</style>
+	<script>
+		window.onload = function(onclick) {
+			var box = document.getElementById("box"); // 정보를 가져 오기.
+	//var box = document.getElementById("box"); // 정보를 가져 오기.
+			console.log(box);
+			box.style.backgroundColor="blue";
+
+//			console.log(w+200);
+//			var w = box.offsetWidth; //박스 크기를 가져오는 것. offset
+			//box.style.width = w + 200 +"px;
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+				var w = box.offsetWidth; //박스 크기를 가져오는 것. offset
+				box.style.width = (w + 1) + "px";
+				console.log(w +" btn click");
+				console.log("hello"+(10 + 20));
+
+			}
+
+			var prefix = "img-";
+			var i = 1;
+			var ext = ".png";
+			console.log(prefix + i + ext);
+
+	// Jquery 는 가져 오는게 ready
+		}
+	</script>
+<body>
+	<div id="box"></div>
+	<button id="btn">Click</button>
+</body>
+</html>

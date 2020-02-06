@@ -1,0 +1,39 @@
+<!--get_prop.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>get_prop.html</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<style>
+		.box { width: 100px;height: 100px;background-color: #fab;}
+		.wrap {width: 1000px;margin: 0 auto;
+			height: 200px; 	background-color: #f1f1f1;
+			position: relative; left: 0;top: 0;}
+		.box1 {width: 100px;height: 100px;background-color: #abf;
+			position: relative; left: 0;top: 0;}
+	</style>
+	<script>
+		$(function(){
+			var w = $(".box").width();
+			console.log(w);
+
+			var h = $(".box").height();
+			console.log(h);
+
+			var off = $(".box").offset();
+			console.log(off);
+
+			off = $(".box1").offset();
+			console.log(off.left); // 괄호가 없는 것은 값, data, value
+			console.log(off.top);
+		})
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="wrap">
+		<div class="box1"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--KeyboardEvent.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>KeyboardEvent</title>
+</head>
+<style>
+	*{margin: 0;padding: 0;}
+	.box{
+		width: 100px;height: 100px;background-color: #fab;
+		position: absolute;
+	}
+	</style>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+	$(function(){
+		var posX=0;
+		var posY=0;
+		//key down, keyup
+		$(window).keydown(function(e){
+			console.log("keydown");
+			console.log(e.keyCode);
+			if(e.keyCode == 123)
+			{
+				e.preventDefault();
+				alert("F12키는 금지되었습니다.");
+			}
+			switch(e.keyCode){
+				case 37: // 왼쪽 화살표
+					posX-=10;	break;
+				case 38: // 위 화살표
+					posY-=10;	break;
+				case 39: // 오른쪽 화살표
+					posX+=10;	break;
+				case 40: // 아래쪽 화살표
+					posY+=10;	break;
+			}
+			$(".box").css("left",posX+"px").css("top", posY+"px");
+		})//keydown
+		$(window).keyup(function(){
+			console.log("keyup");
+		})//keyup
+	})
+	</script>
+<body>
+	<div class="box"></div>
+</body>
+</html>

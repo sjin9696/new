@@ -1,0 +1,74 @@
+<!--jquery_basic.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_basic</title>
+	<style>
+		.box{width: 100px;height: 100px;background-color: #fab;}
+		.large_box{
+			width: 300px;height: 300px;background-color: #abf;
+		} // 태그에 적용되는 개체가 없음.  절차지향적인 의미로.
+	</style>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+//		$$$$$$$$$$$$$
+//		$ - jQuery의 기본 구조
+//		$(function(){
+//
+//		});
+
+		$(function(){
+		//태그의 스타일 제어
+		// 스타일의 변경/추가
+//		$(".box").css("background-color","blue");
+//		$(".box").css("color","white");
+
+		// 스타일 값 가져오기
+			var fontSize = $(".box").css("font-size");
+			console.log(fontSize);
+
+		$("#link").css("color","red");
+		// 태그의 속성(Attribute)변경
+		$("#link").attr("href","https://www.naver.com");
+		$("#link").attr("target","_blank");
+		var ref = $("#link").attr("href"); // 해당 속성을 가져올때에 두번째 값을 넣지 않으면 값을 반환 받을수 있다.
+		console.log(ref);
+
+		var userid = $("#user_id").val();
+		console.log(userid);
+
+		var userid = $("#user_id").val("어떤걸 입력할까");
+		console.log(userid);
+
+		var userid = $("#user_id").val();
+		console.log(userid);
+
+
+		// .large_box를 추가.
+			$(".box").addClass("large_box");
+		// class = "box large_box"
+
+		//removeClass("box") 클래스의 삭제.
+		$(".box").removeClass("box");
+
+		$(".large_box").addClass("box");
+//		$(".box").css("","box");
+		//removeClass("box") 클래스의 삭제.
+		$(".box").removeClass("large_box");
+
+
+		//아래와같이 작동하던 코드를 일시적으로 제거할때
+		// 많이 사용한다.
+		//console.log( $("box") );
+		})
+	</script>
+</head>
+<body>
+
+	<input type="text" id="user_id" value="아이디입력">
+
+	<a href="#" id="link">LINK</a>
+	<div class="box">this is box</div>
+</body>
+</html>

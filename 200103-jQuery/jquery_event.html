@@ -1,0 +1,57 @@
+<!--jquery_event.html-->
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_event</title>
+<!--	<script src="jquery/jquery-3.4.1.min.js"></script>-->
+	<!--	CDN-->
+	<script src="https:code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+//		$(function(){
+			// 이벤트 - 사용자가 웹페이지를 사용할 때 행하는 어떤 동작
+			// 클릭, 마우스이동, 마우스 올려놓기, 키보드누르기, 휠돌리기 등등
+			// 이벤트 지정 기본 문법
+			// $("이벤트를 지정할대상").이벤트종류(function(){
+			//		실행할 내용들;
+			//	})
+//		})
+		var open = false;
+		$(function(){
+			$("#btn_open").click(function(){
+//				$(".box").addClass("open");
+				console.log("누름");
+//				$(".box").css("height","100px");
+//				$(".box").toggleClass("open"); // 추가, 제거를 해주는 함수,
+
+				if(open == false){
+					$(".box").css("height","100px");
+					$("#btn_open").val("어떤걸 입력할까");
+					console.log("100px");
+				}
+				else {
+					$(".box").css("height","0px");
+					console.log("0px");
+				}
+				open = !open;
+			})
+			$("#btn_close").click(function(){
+//				$(".box").removeClass("open");
+				$(".box").css("height","0px");
+				console.log("닫기");
+			})
+		})
+	</script>
+	<style>
+		.box{width: 100px;height: 0; background-color: #fab;
+		transition: height 0.3s;
+		}
+		.box.open {height: 100px;}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<button id="btn_open">열기</button>
+	<button id="btn_close">닫기</button>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--prograsbar.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prograsbar</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="progressbar.min.js"></script>
+<!--	https://kimmobrunfeldt.github.io/progressbar.js/-->
+	<script>
+		$(function(){
+//			var p = new ProgressBar.Circle("#prog",{
+//			var p = new ProgressBar.SemiCircle("#prog",{
+//			var p = new ProgressBar.Square("#prog",{
+			var p = new ProgressBar.Line("#prog",{
+				color:"#f00",		//채워지는 색
+				trailColor:"#ccc",	//배경선 색
+				strokeWidth:8,		//채워지는 선 굵기
+				trailWidth:10,			//배경 선 굵기
+				duration:1000,		//애니메이션시간 0:빠름 5000:느림
+				text:{
+					value:"asd", //값변경
+					style:{
+						position:"absolute",
+						left:"50%",
+						top:"50%",
+						transform:"translate(-50%,-50%)",
+						fontSize:"30px",
+						fontWeight:"bold",
+						color:"#333"
+					}
+				},
+				step:function(state,graph){
+					var percent = Math.round(graph.value()*100)+"%";
+					graph.setText(percent);
+				}
+
+			})
+			p.animate(0.95); //1: 100%, 0.8 : 80%
+		})
+	</script>
+	<style>
+		#prog{width: 200px;height: 200px;}
+	</style>
+</head>
+<body>
+	<div id="prog"></div>
+</body>
+</html>

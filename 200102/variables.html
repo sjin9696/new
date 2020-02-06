@@ -1,0 +1,83 @@
+<!--variables.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>variables</title>
+	<script>
+		//변수
+		// 데이터를 담을 수 있는 메모리 공간
+		// 변수 하나 당 데이터 1개가 저장된다.
+		// 1. 변수생성
+		// 변수키워드 변수 이름;
+
+		// 2. 변수에 값 저장
+		// 변수이름 = 값;
+
+//		var a;
+//		a = 10;
+//
+//		//3. 변수의 사용
+//		//변수이름;
+//
+//		a;
+//		document.write("a=10 ", a);
+//		// 4. 변수의 값 재지정 "값이 변할 수 있기 때문에 변수"
+//		a = 20;
+//		document.writeln("<br>a=20 ",a);
+//		var answer = prompt("당신의 이름은?");
+//		document.write("<br><br>반갑습니다. ", answer,"님^^<br><br>");
+//		document.write("<b>"+answer+"</b>" + "님 반갑습니다. ", answer,"^^");
+//		console.log(answer);
+
+		//변수에 저장 할 수 있는 데이터의 종료
+		// Data type
+		// 1. 숫자
+		var number = 10;
+		console.log(number);
+		number = 1.23;
+		console.log(number);
+		number = -1.23;
+		console.log(number);
+		number = 1.23e-5;
+		console.log(number);
+		 // 2. 문자
+		var str = " \"hello\\/\/\/\/\/\/\/\/\/\/\/\" \" ";
+		console.log(str);
+		str = 'world';
+		console.log(str);
+		str = 1.23;
+
+		// 3. 논리값
+		var boolean = true;
+		console.log(boolean);
+		boolean = false;
+		console.log(boolean);
+
+		// 4. 정의 되지 않은 값
+		var aaa;
+		console.log(aaa); //변수 aaa가 사용된 적이 없다.
+
+		// 5. 비어있는 값
+		var bbb = 10;
+		bbb = null; // 변수가 사용된 적은 있지만, 현재는 비어있음.
+		console.log(bbb);
+		console.log(typeof bbb);
+		bbb = 10;
+		console.log(typeof bbb); //number
+		bbb = "abc";
+		console.log(typeof bbb); //string
+		bbb = true;
+		console.log(typeof bbb); //boolean
+
+		// 6. 상수 const NUM = 100;
+		// 상수명은 대문자로 표현한다.
+		 const NUM = 100;
+		//
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!--condition_check.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>condition_check</title>
+	<script>
+		//조건식의 결과가 true/false에 까라서 다른 동작을 하도록 만들어 주는 분기문
+		//조건 선택 연산자와 유사
+//
+//		if(조건식){
+//		   실행 할 명령문 들
+//		   }
+		var balance = 8000000;
+		var price   = 3000000;
+
+		if(balance >= price*2){
+			//잔고가 가격의 두배보다 많다면.
+			//조건식의 결과가 true일 때 실행
+			console.log("balance : "+(balance-price)+" 구매하기");
+		}
+//		if(balance < price*2)
+		else if(balance >= price){
+			//그게 아니라면. 잔고가 가격보다 많다면
+			console.log("고민하기");
+		}
+		else {
+			//그것도 아니라면,
+			console.log("구매불가");
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

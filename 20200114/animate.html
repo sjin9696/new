@@ -1,0 +1,76 @@
+<!--animate.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>animate</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 100px; height: 100px; background-color: #fab;
+		/*transition:width 0.2s; */
+		}
+	</style>
+	<script>
+	$(function(){
+	  /*$("적용대상").animate(
+		{
+			"CSS속성":"값",
+			"CSS속성":"값",
+			"CSS속성":"값",
+			"CSS속성":"값"
+		}, 시간(ms), easing옵션, callback
+	})*/
+	/*  $(".box").animate(
+			{
+				"width":"300px",
+				"height":"300px"
+				"background-color":"red"
+			},
+			2000
+		)*/
+	  /*$(".box").animate({
+		{"width":"300px"}
+		},1000).animate({
+		"height":"3.animate({
+		{"height":"300px"}
+		},1000)
+	})
+	$(".box").mouseover(funtion(){
+		$(this).stop().animate({"width":"300px"}, 1000})
+	})
+	$(".box").mouseout(funtion(){
+		$(this).stop().animate({"width":"100px"}, 1000})
+	})
+	$(".box").mouseout(funtion(){
+	  })*/
+		/*for(var i=0; i< $(".box").length; i++)
+			{
+				$(".box").eq(i).delay(i*100).animate({"width":"100%"},1000);
+			}*/
+		$(".box").animate({"width":"100%"},1000,function(){
+			$(".box").css("background-color","#abf");
+		})
+	})//jQuery end
+	</script>
+
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</body>
+</html>

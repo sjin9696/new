@@ -1,0 +1,59 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+	$("document").ready(function(){
+		var $list = $("ul li");
+		//$선택자의 경우 표시를 한다.
+		//데이터의 경우. 달지 않는다.
+
+		//css = 선택자
+		//script의 경우는 비교 속성인 eq속성을 사용한다.
+
+		$list.click(function(){
+			var i = $(this).index(); //eq
+			//$(this).css("color","orange"); //선택자와 이벤트 대상자가 나 자신.
+			$list.eq(i).css("color","orange");//나자신이냐 선택한 번호냐.
+			//eq = 선택자와 이벤트 대상자가 동일 하면 $(this)로 표현이 가능하다.
+			$("span").html("현재 선택한 index번호는 : <font style = color:red;>"+i);
+		})
+		$("a").click(function(){
+			var i = $(this).index();	//nth_child
+			var i = $("a").index(this); // nth_type
+			$("span").html("현재 선택한 index번호는 : <font style = color:red;>"+i);
+		})
+	})
+
+		//정말 열심히 하고 대충 알려드리진 않을거예요.
+		//궁금하신게 있으시면 언제든지 커트 하시고 물어보시면 됩니다.
+
+	$(function(){
+
+	})
+	jQuery(function(){
+
+	})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>item1</li>
+		<li>item2</li>
+		<li>item3</li>
+		<li>item4</li>
+		<li>item5</li>
+		<li>item6</li>
+		<li>item7</li>
+		<li>item8</li>
+		<li>item9</li>
+		<li>item10</li>
+	</ul>
+	<a href="#">1234</a>
+	<a href="#">5678</a>
+			<span></span>
+</body>
+</html>

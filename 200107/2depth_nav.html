@@ -1,0 +1,214 @@
+<!--2depth_nav.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2depth_nav</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<style>
+		*{margin: 0;padding: 0;font-size: 16px; line-height: 1;}
+		li{list-style: none;}
+		img{vertical-align: middle;}
+
+		#gnb {position: relative;}
+		#logo {position: absolute; left: 50px; top: 30px;}
+
+		header{ width: 100%; display: inline;}
+		.main_menu{ width: 1200px;margin: 0 auto; overflow: hidden;}
+		.main_menu > a {
+			float: left; display: block;
+			width: 200px;text-align: center;
+			padding: 40px 0;
+			font-size: 18px; font-weight: bold;
+			text-decoration: none;
+			color: #000;
+		}
+		.right_menu{
+			position: absolute; right: 50px; top: 30px;}
+		.right_menu button{
+			background-color: darkblue;
+			color: #fff;
+			font-weight: bold;font-size: 14px;
+			width: 100px;height: 40px;border: 0;
+			border-radius: 10px 0 10px 0;
+			margin-left: 20px;
+		}
+
+		.sub_wrap {
+			width: 900px; margin: 0 auto;
+		}
+		.sub {
+			float: left; width: calc(900px/6);
+			text-align: center;
+		}
+		.sub a {
+			display: block; color: #333;
+			font-size: 14px;
+			padding: 10px 0 ;
+			text-decoration: none;
+		}
+
+		.sub_area{
+			background-color: #f8f8f8;
+			padding-bottom: 30px;
+			padding: 0px 50px;
+			height: 0px;
+
+			overflow: hidden;
+			transition: padding 0.3s, height 0.3s;
+		}
+		.sub_area.open{
+			padding-bottom: 30px;
+			height: 170px;
+		}
+/*
+		.sub > ul{	background-color: #afb; padding: 10px;
+		}
+*/
+	</style>
+	<script>
+		$(function(){
+			$(".main_menu, .sub_area").mouseover(function(){
+				$(".sub_area").addClass("open");
+			})
+
+			$(".main_menu, .sub_area").mouseout(function(){
+				$(".sub_area").removeClass("open");
+			})
+	/*
+			$(".sub_area").mouseover(function(){
+				$(".sub_area").addClass("open");
+			})
+
+			$(".sub_area").mouseout(function(){
+				$(".sub_area").removeClass("open");
+			})*/
+		})
+	</script>
+</head>
+<body>
+	<header>
+		<nav id="gnb">
+			<a href="#" id="logo">
+				<img src="http://placehold.it/166x56" alt="">
+			</a>
+			<div class="main_menu">
+				<a href="#">브랜드</a>
+				<a href="#">분야정보</a>
+				<a href="#">현장/입주정보</a>
+				<a href="#">프리미엄</a>
+				<a href="#">커뮤니티</a>
+				<a href="#">고객센터</a>
+			</div>
+			<div class="right_menu">
+				<button id="btn_login">로그인</button>
+				<a href="">
+					<img src="http://placehold.it/28x28" alt="">
+				</a>
+			</div>
+		</nav>
+		<div class="sub_area">
+			<div class="sub_wrap">
+				<ul class="sub">
+					<li>
+						<a href="#">브랜드스토리</a>
+					</li>
+					<li>
+						<a href="#">BI</a>
+					</li>
+					<li>
+						<a href="#">브랜드 광고</a>
+					</li>
+					<li>
+						<a href="#">수상경력</a>
+					</li>
+				</ul>
+				<ul class="sub">
+					<li>
+						<a href="#">분양단지</a>
+					</li>
+					<li>
+						<a href="#">분양캘린더</a>
+					</li>
+				</ul>
+				<ul class="sub">
+					<li>
+						<a href="#">포레나 갤러리</a>
+					</li>
+					<li>
+						<a href="#">포레나 뉴스</a>
+					</li>
+					<li>
+						<a href="#">포레나 채널</a>
+					</li>
+					<li>
+						<a href="#">분양캘린더</a>
+					</li>
+				</ul>
+				<ul class="sub">
+					<li>
+						<a href="#">포레나 갤러리</a>
+					</li>
+					<li>
+						<a href="#">포레나 뉴스</a>
+					</li>
+					<li>
+						<a href="#">포레나 채널</a>
+					</li>
+					<li>
+						<a href="#">분양캘린더</a>
+					</li>
+				</ul>
+				<ul class="sub">
+					<li>
+						<a href="#">포레나 갤러리</a>
+					</li>
+					<li>
+						<a href="#">포레나 뉴스</a>
+					</li>
+					<li>
+						<a href="#">포레나 채널</a>
+					</li>
+					<li>
+						<a href="#">분양캘린더</a>
+					</li>
+				</ul>
+				<ul class="sub">
+					<li>
+						<a href="#">자주 묻는 질문</a>
+					</li>
+					<li>
+						<a href="#">고객문의</a>
+					</li>
+					<li>
+						<a href="#">A/S안내</a>
+					</li>
+					<li>
+						<a href="#">중도금 납부 조회</a>
+					</li>
+					<li>
+						<a href="#">공지사항</a>
+					</li>
+				</ul>
+				<ul class="sub">
+					<li>
+						<a href="#">자주 묻는 질문</a>
+					</li>
+					<li>
+						<a href="#">고객문의</a>
+					</li>
+					<li>
+						<a href="#">A/S안내</a>
+					</li>
+					<li>
+						<a href="#">중도금 납부 조회</a>
+					</li>
+					<li>
+						<a href="#">공지사항</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

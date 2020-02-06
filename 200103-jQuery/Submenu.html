@@ -1,0 +1,50 @@
+<!--Submenu.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Submenu</title>
+	<style>
+		*{margin: 0;padding: 0;text-decoration: none;}
+		.menu {
+			display: inline-block;
+			width: 80px;bgc#abf
+			color: #fff;padding: 10px 0;
+
+		}
+		.sub{
+			width: 80px;
+			overflow: hidden;
+			background-color: rgba(0,0,0,0.7);
+		}
+		.sub > a {display: block; color: #fff; padding: 10px 0;}
+	</style>
+	<script src="jquery/jquery-3.4.1.min.js">
+		var open = true;
+		$(function(){
+			$(".menu").Click(function){
+				console.log("누름");
+				if(open == false){
+					$(".box").css("height","100px");
+					$("#btn_open").val("어떤걸 입력할까");
+					console.log("100px");
+				}
+				else {
+					$(".box").css("height","0px");
+					console.log("0px");
+				}
+				open = !open;
+			}
+		})
+	</script>
+</head>
+<body>
+	<a href="#" class="menu">Menu1</a>
+	<div class="sub">
+		<a href="#">sub1</a>
+		<a href="#">sub2</a>
+		<a href="#">sub3</a>
+		<a href="#">sub4</a>
+	</div>
+</body>
+</html>

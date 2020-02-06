@@ -1,0 +1,55 @@
+<!--Operator.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Operator</title>
+	<script>
+		//산술, 논리, 비교, 대입, 조건선택
+		//	var age = prompt("나이를 입력하세요");
+		//		var btn = document.getElementById("btn2");
+		//		var num = 2;
+		//			console.log(++num);
+		//
+		////		var prompt = document.write(prompt);
+		//		document.write(age+"살로 ");
+		//
+		//			if(age >= 19){
+		//				document.write("성인이다");
+		//			}
+		//			else{
+		//				document.write("미성년이다");
+		//			}
+		//
+		//조건선택 연산자 ( 삼항 연산자) ()?():();
+		// 조건식? 조건식의 결과가 true일때 실행할 명령문: (콜론)
+		// 조건식의 결과가 false일 때 실행할 명령문 ; (세미콜론)
+		//		age >= 19 ? console.log("성인입니다.") : console.log("미성년입니다.") ;
+
+		//논리 연산자 AND && , OR ||, NOT !
+		console.log(" AND 1: " + true && true);
+		console.log(" \&& 2: " + true && false);
+		console.log(" \&& 3: " + false && true);
+		console.log(" \&& 4: " + false && false);
+
+		// OR - 두가지 조건 중 하나만 만족되어도 될 때 사용
+		// A OR B - A나 B 둘중 하나.
+		console.log(" || 1: " + true || true);
+		console.log(" || 2: " + true || false);
+		console.log(" || 3: " + false || true);
+		console.log(" || 4: " + false || false);
+		var array = ['포도', '사과', '바나나', '망고'];
+
+		for (var i in array) {
+			alert(array[i]);
+		}
+
+	</script>
+</head>
+
+<body>
+	<button id="btn2">Click</button>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!--20200128_jQuery_object.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20200128_jQuery_object</title>
+</head>
+<script src="../200103-jQuery/jquery/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+	  $("body").append("<div class='box'></div>");
+	  $(".box").css("width", "100px").css("height","100px").css("background-color","#fab");
+	  $(".box2").css("width", "100px").css("height","100px").css("background-color","#fab");
+	  })
+	 var boxStyle = {
+		width : "100px",
+		height : "100px",
+		backgroundColor : "#fab"
+	}
+	$(".box").css(boxStyle);
+	$("body").append("<div class='box2'></div> ")
+	$(".box2").css({
+		width : "100px",
+		height : "100px",
+		backgroundColor : "#fab"
+
+	var destination = {
+		width : "300px",
+		height : "250px"
+		showInfo:functhion
+	}
+				   destination.showInfo();
+	//$(".box2").stop.animate(destination, 1000);
+
+	})
+</script>
+<body>
+
+</body>
+</html>

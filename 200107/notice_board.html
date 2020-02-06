@@ -1,0 +1,165 @@
+<!--notice_board.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>notice_board</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".notice_open").click(function(){
+				$(".item_content").removeClass("open");
+				$(this).parent().parent().find(".item_content").toggleClass("open");
+				//전체 클래스를 제거하는 동작을 먼저 설명해주기.
+				//순서에 대해서 설명해주기.
+			})
+		})
+	</script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.notice_header{ padding: 20px 0;}
+		.notice_header a { font-size: 18px; color: #ccc;
+		font-weight: bold;text-decoration: none;
+		margin-right: 20px;
+		}
+
+		.wrap{ width: 600px;margin: 0 auto;}
+
+		.notice_list{
+			border-top: 2px solid #000;
+		}
+		.notice_item {
+			padding: 20px 0;
+			position: relative;
+		}
+		.notice_item h2 {
+			font-size: 18px; font-weight: normal;
+		}
+		.notice_item span {
+			font-size: 14px; color: #999;
+			position: absolute; right: 20px; top: 23px;
+		}
+		.notice_item button {
+			background-color: #fff; border: 0;
+			position: absolute; right: 0;top: 25px;
+		}
+		.item_content{
+			margin-top: 20px;
+			padding: 10px 20px;
+			background-color: #f4f4f4;
+			display: none;
+		}
+		.item_content p{
+			text-align: justify;
+		}
+		.notice_item .item_content.open {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="notice_header">
+			<a href="#">공지사항</a>
+			<a href="#">FAQ</a>
+		</div>
+		<div class="notice_list">
+			<div class="notice_item">
+				<div class="item_title">
+					<h2>재고실사로 인한 배송인정 안내</h2>
+					<span>2019-12-24</span>
+					<button class="notice_open">▼</button>
+				</div>
+				<div class="item_content">
+					<p>안녕하세요 카카오프렌즈 온라인스토어입니다.
+					물류센터 재고실사로 인한 배송일정을 안내 드립니다.
+					재고실사 기간: 12/31(화)
+					12/30(월) 오후 3시 이전 주문건은 정상 출고
+					12/30(월) 오후 3시 이후 주문건은 1/2(목)부터 순차 출고됩니다.
+					실사 기간 동안, 주문은 가능하지만 상품이 출고되지 않으며
+					교환/반품 회수도 1/2(목)부터 순차적으로 진행됩니다.
+					항상 카카오프렌즈 온라인몰과 함께 해주셔서 감사드리며,
+					보다 나은 서비스를 제공할 수 있도록 노력하겠습니다.
+					감사합니다.</p>
+				</div>
+			</div>
+			<div class="notice_item">
+				<div class="item_title">
+					<h2>재고실사로 인한 배송인정 안내</h2>
+					<span>2019-12-24</span>
+					<button class="notice_open">▼</button>
+				</div>
+				<div class="item_content">
+					<p>안녕하세요 카카오프렌즈 온라인스토어입니다.
+					물류센터 재고실사로 인한 배송일정을 안내 드립니다.
+					재고실사 기간: 12/31(화)
+					12/30(월) 오후 3시 이전 주문건은 정상 출고
+					12/30(월) 오후 3시 이후 주문건은 1/2(목)부터 순차 출고됩니다.
+					실사 기간 동안, 주문은 가능하지만 상품이 출고되지 않으며
+					교환/반품 회수도 1/2(목)부터 순차적으로 진행됩니다.
+					항상 카카오프렌즈 온라인몰과 함께 해주셔서 감사드리며,
+					보다 나은 서비스를 제공할 수 있도록 노력하겠습니다.
+					감사합니다.</p>
+				</div>
+			</div>
+			<div class="notice_item">
+				<div class="item_title">
+					<h2>재고실사로 인한 배송인정 안내</h2>
+					<span>2019-12-24</span>
+					<button class="notice_open">▼</button>
+				</div>
+				<div class="item_content">
+					<p>안녕하세요 카카오프렌즈 온라인스토어입니다.
+					물류센터 재고실사로 인한 배송일정을 안내 드립니다.
+					재고실사 기간: 12/31(화)
+					12/30(월) 오후 3시 이전 주문건은 정상 출고
+					12/30(월) 오후 3시 이후 주문건은 1/2(목)부터 순차 출고됩니다.
+					실사 기간 동안, 주문은 가능하지만 상품이 출고되지 않으며
+					교환/반품 회수도 1/2(목)부터 순차적으로 진행됩니다.
+					항상 카카오프렌즈 온라인몰과 함께 해주셔서 감사드리며,
+					보다 나은 서비스를 제공할 수 있도록 노력하겠습니다.
+					감사합니다.</p>
+				</div>
+			</div>
+			<div class="notice_item">
+				<div class="item_title">
+					<h2>재고실사로 인한 배송인정 안내</h2>
+					<span>2019-12-24</span>
+					<button class="notice_open">▼</button>
+				</div>
+				<div class="item_content">
+					<p>안녕하세요 카카오프렌즈 온라인스토어입니다.
+					물류센터 재고실사로 인한 배송일정을 안내 드립니다.
+					재고실사 기간: 12/31(화)
+					12/30(월) 오후 3시 이전 주문건은 정상 출고
+					12/30(월) 오후 3시 이후 주문건은 1/2(목)부터 순차 출고됩니다.
+					실사 기간 동안, 주문은 가능하지만 상품이 출고되지 않으며
+					교환/반품 회수도 1/2(목)부터 순차적으로 진행됩니다.
+					항상 카카오프렌즈 온라인몰과 함께 해주셔서 감사드리며,
+					보다 나은 서비스를 제공할 수 있도록 노력하겠습니다.
+					감사합니다.</p>
+				</div>
+			</div>
+			<div class="notice_item">
+				<div class="item_title">
+					<h2>재고실사로 인한 배송인정 안내</h2>
+					<span>2019-12-24</span>
+					<button class="notice_open">▼</button>
+				</div>
+				<div class="item_content">
+					<p>안녕하세요 카카오프렌즈 온라인스토어입니다.
+					물류센터 재고실사로 인한 배송일정을 안내 드립니다.
+					재고실사 기간: 12/31(화)
+					12/30(월) 오후 3시 이전 주문건은 정상 출고
+					12/30(월) 오후 3시 이후 주문건은 1/2(목)부터 순차 출고됩니다.
+					실사 기간 동안, 주문은 가능하지만 상품이 출고되지 않으며
+					교환/반품 회수도 1/2(목)부터 순차적으로 진행됩니다.
+					항상 카카오프렌즈 온라인몰과 함께 해주셔서 감사드리며,
+					보다 나은 서비스를 제공할 수 있도록 노력하겠습니다.
+					감사합니다.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

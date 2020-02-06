@@ -1,0 +1,72 @@
+<!--element_search.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>element_search</title>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".box button").click(function(){
+//				alert("버튼클릭");
+				//박스버튼에 해당하는 태그 중
+				// click이벤트를 발생시킨 태그
+				// 요소 검색 탐색
+				$(this).css("font-size", "50px");
+				$(this).parent().parent().find(".area2 span").css("background-color","red");
+//				$(".area2 span").css("color","red");
+
+			})
+		})
+	</script>
+	<style>
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>Lorem ipsum dolor.</h1>
+		<div class="area1">
+			<button>버튼</button>
+		</div>
+		<p>Lorem ipsum dolor.</p>
+		<div class="area2">
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+			</a>
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+			</a>
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+			</a>
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+				<span>Lorem ipsum dolor.</span>
+			</a>
+		</div>
+	</div>
+	<div class="box">
+		<h1>Lorem ipsum dolor.</h1>
+		<div class="area1">
+			<button>버튼</button>
+		</div>
+		<p>Lorem ipsum dolor.</p>
+		<div class="area2">
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+			</a>
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+			</a>
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+			</a>
+			<a href="#">
+				<img src="http://placehold.it/50x50">
+				<span>Lorem ipsum dolor.</span>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

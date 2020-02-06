@@ -1,0 +1,30 @@
+<!--mouseWheel.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseWheel</title>
+	<script src = "jquery/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function(){
+			$(window).on("mousewheel DOMMousewheel",function(e){
+				var dt = e.originalEvent.wheelDelta;
+				if(dt <0){
+					console.log("아래로돌림",dt); //마이너스
+				}
+				else{
+					console.log("위로돌림",dt); //플러스
+
+				}
+			})
+
+		})
+	</script>
+	<style>
+
+	</style>
+</head>
+<body>
+
+</body>
+</html>

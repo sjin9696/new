@@ -1,0 +1,57 @@
+<!--topbtn.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<style>
+		body {
+			height: 3000px;
+			background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%, rgba(5, 171, 224, 1) 100%);
+		}
+
+		/* Chrome10-25,Safari5.1-6 */
+		#topBtn {
+			background-color: #fff;
+			width: 80px;
+			t90 font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			box-sizing: border-box;
+			padding-top: 10px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			position: fixed;
+			right: 20px;
+			bottom: 20px;
+/*			opacity: 0;*/
+			transition: opacity 0.3s;
+			display: none;
+		}
+	</style>
+	<script>
+	$(function(){
+		$(window).scroll(){
+			vat tp = $(window).scrollTop();
+//			console.log(tp);
+			if(tp>=1000){
+				$("#topBtn").css("display","block");
+				$("#topBtn").stop().animate({"opacity":"1"},300);
+
+			}else{
+				$("#topBtn").stop().animate({"opacity":"0"},300, function(){
+					$("#topBtn").css("display","none");
+				});
+			}
+		}) //scroll end
+
+		$("#topBtn").click(function(){
+			$("html, body").animate({"scrollTop":0}, 1000);
+		});
+	})//jQ end
+	</script>
+
+<body>
+	<div id="topBtn">▲<br>TOP</div>
+</body></html>

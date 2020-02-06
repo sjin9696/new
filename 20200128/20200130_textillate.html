@@ -1,0 +1,55 @@
+<!--20200130_textillate.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>20200130_textillate</title>
+	<link rel="stylesheet" href="../css/animate.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../css/js/jquery.fittext.js"></script>
+	<script src="../css/js/jquery.lettering.js"></script>
+	<script src="../css/js/jquery.textillate.js"></script>
+	<script>
+		$(function(){
+			var options = { //오브젝트
+				autoStart:true, //수동으로 효과를 재생
+				loop:true, //반복
+//				type:"word", //글자단위
+				type:"char", //단어단위
+				in:{		//나타날때
+//					effect:"jackInTheBox"
+					effect:"flipInY",
+					//shuffle:true, //shuffle,reverse 둘중에 하나만 적용 가능.
+					reverse:true,
+//					sync:true, //빠르게
+					delay:50, //속도조절 0~100단위
+					callback:function(){
+					//in효과의 재생이 끝난 다음에 실행이 될 코드
+						console.log("In Effect Ended");
+					}
+				},
+				out:{	//in과 반대로 나갈때
+					effect:"bounceOut",
+					callback:function(){
+					//in효과의 재생이 끝난 다음에 실행이 될 코드
+						console.log("Out Effect Ended");
+					}
+				}
+			} //options end
+			$("#text").textillate(options);
+		$("#in").click(function(){
+			$("#text").textillate("in");
+		})
+		$("#out").click(function(){
+			$("#text").textillate("out");
+		})
+
+		})
+	</script>
+</head>
+<body>
+	<h1 id="text"> Lorem ipsum dolor.</h1>
+	<button id="in">In Effect</button>
+	<button id="out">Out Effect</button>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!--string_object.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string_object</title>
+</head>
+<script>
+	var str ="Hello world!"; //문자열 object
+	var i = str.indexOf("world"); //시작되는 문자열을 알려준다. 없을 때는 -1을 표시한다.
+	console.log(i); //
+
+	console.log(navigator.userAgent.toUpperCase());
+	console.log(navigator.userAgent.toLowerCase());
+	var agent = navigator.userAgent.toLowerCase();
+
+//	if(agent.indexOf("mobile") != -1){
+//		alert("모바일 브라우저입니다.");
+//		document.location.href = "http://m.naver.com";
+//
+//	}else{
+//		alert("PC 브라우저입니다.");
+//		document.location.href = "http://www.naver.com";
+//	}
+	var str2 = "apple;grape;peach";
+	var result = str2.split(";");
+	console.log(result[0]);
+	console.log(result[1]);
+	console.log(result[2]);
+
+	console.log(printHello());
+	printHello();
+	printHello();
+	printHello();
+	printHello();
+	printHello();
+	printHello();
+
+	function printHello(){
+		console.log("Hello World");
+		return ":( Hello Zombie";
+	}
+
+	function getPI(){
+		return 3.14159265358979;
+	}
+	var pi = getPI();
+	console.log(pi);
+	console.log(getPI());
+	 function plus(a,b){
+		 console.log(a+b);
+	 }
+	plus(3,2);
+	plus('a','b');
+	plus(-1,1);
+	function minus(a,b){
+		 return a-b;
+	 }
+	console.log(minus(10,20));
+	$(function(){
+		//HTML코드가 다 읽어진 다음 실행한다.
+	})
+	$(document).ready(function(){ //어나미머스 funtion
+		//이벤트 설정시에만 사용하는 1회성 함수.
+		//재사용이 불가능 하다.
+
+
+	})
+	$(".box").html("BOX");
+	//순차적으로 컴파일일 하는 과정에서 명시 되지 않은 html을 찾을수가 없어서. 컴파일러 에러가 난다.
+
+</script>
+<body>
+	<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+/* main.css */
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
+
+/* font-family: 'Bangers', cursive; */
+/* font-family: 'Do Hyeon', sans-serif; */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+section {
+	height: 100vh;
+	position: relative;
+	top: 0vh;
+	/* 0, -100vh ~ -400vh */
+}
+
+section:nth-child(1) {
+	background-color: #333;
+}
+
+section:nth-child(2) {
+	background-color: #666;
+}
+
+section:nth-child(3) {
+	background-color: #999;
+}
+
+section:nth-child(4) {
+	background-color: #ccc;
+}
+
+section:nth-child(5) {
+	background-color: #f3f3f3;
+}
+
+.pager_area {
+	position: fixed;
+	right: -60px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.pager {
+	width: 15px;
+	height: 15px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+.pager.active {
+	background-color: #ffffff;
+}
+
+#title_area h1 {
+	font-size: 120px;
+	color: #f4f4f4;
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	position: absolute;
+	width: 100%;
+	top: 45%;
+	margin-top: -60px;
+	letter-spacing: 5px;
+}
+
+#title_area p {
+	font-size: 36px;
+	color: #f4f4f4;
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	position: absolute;
+	width: 100%;
+	top: 60%;
+	margin-top: -60px;
+	letter-spacing: 3px;
+}
+
+#particle {
+	opacity: 0;
+	/*transition:opacity 1s;*/
+	height: 100vh;
+}
+
+/* #title_area {
+    display: none;
+} */
+#profile_area > h1,
+#profile_area > p {
+	font-size: 70px;
+	color: #f4f4f4;
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	letter-spacing: 5px;
+}
+
+#profile_area > h1 {
+	padding-top: 50px;
+}
+
+#profile_area > p {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+#profile_area > p {
+	font-size: 36px;
+	letter-spacing: 3px;
+}
+
+.profile_detail {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.profile_detail > .center_line {
+	position: absolute;
+	width: 1px;
+	/* height: 75%; */
+	height: 0;
+	left: 43%;
+	background-color: rgba(255, 255, 255, 0.7);
+	top: 12.5%;
+	transition: height 0.3s;
+}
+
+.profile_detail > div {
+	float: left;
+	width: 50%;
+}
+
+.detail_left > p {
+	font-family: 'Do Hyeon', sans-serif;
+	color: #f4f4f4;
+	font-size: 24px;
+	line-height: 1.2;
+	opacity: 0;
+}
+
+.detail_left > p:first-child {
+	font-size: 36px;
+}
+
+.detail_left > h1,
+.detail_right h1 {
+	font-family: 'Bangers', cursive;
+	color: #f4f4f4;
+	font-size: 90px;
+	letter-spacing: 5px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	opacity: 0;
+}
+
+.detail_left > img {
+	margin-bottom: 30px;
+	width: 300px;
+	opacity: 0;
+}
+
+.detail_right h1 {
+	font-size: 50px;
+	text-align: center;
+	letter-spacing: 3px;
+	opacity: 1;
+}
+
+.p_item {
+	width: 150px;
+	float: left;
+	margin: 2px;
+	opacity: 0;
+}
+
+.p_item .img_box {
+	width: 150px;
+	height: 150px;
+	background-color: #f4f4f4;
+	border-radius: 50%;
+	margin-top: 40px;
+	position: relative;
+}
+
+.p_item .img_box img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.p_item > p {
+	font-family: 'Do Hyeon', sans-serif;
+	color: #f4f4f4;
+	font-size: 24px;
+	text-align: center;
+	padding-top: 10px;
+	letter-spacing: 5px;
+}
+
+#ability_area > h1 {
+	padding-top: 50px;
+	position: relative;
+	font-size: 70px;
+	color: #f4f4f4;
+	text-align: center;
+	font-family: 'Bangers', cursive;
+	letter-spacing: 5px;
+}
+
+.ability_list {
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+
+.graph {
+	display: inline-block;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 50px;
+	opacity: 0; transition: opacity 1s;
+}
+.graph h2{
+	bottom: 0;
+	color: #f4f4f4;
+	font-size: 40px;
+	font-family: 'Bangers', cursive;
+	position: absolute; left: 50%; top: 60%;
+	transform: translate(-50%);
+}
+.graph:nth-child(3) {
+	margin-right: 0px;
+}

@@ -1,0 +1,41 @@
+<!--object.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object2</title>
+</head>
+<style>
+	*{margin: 0;padding: 0;}
+	.box{width: 100px;height: 100px;background-color: #fab;}
+</style>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+
+		$(".calc").click(function(){
+			var start = $("#start").val();
+			var end = $("#end").val();
+			console.log(start, end);
+			 var startDt = new Data(start);
+			 var endDt = new Data(end);
+		     var result = endDt - startDt/1000/60/60/24;
+			if(result <= 0){
+				$(".result").html(result+"일 남았습니다.");
+			}else{
+				$(".result").html(result+"일 남았습니다.");
+			}
+		})// click end
+	})// jQuery end
+	</script>
+<body>
+<!--	<div class="box"></div>-->
+	<div class="box2"></div>
+	<div class="d_day">
+		시작일 <input type="text" id="start" placeholder = "YYYY-MM-DD"><br>
+		종료일 <input type="text" id="end" placeholder = "YYYY-MM-DD"><br>
+		<button class="calc">계산하기</button>
+		<p class="result"></p>
+	</div>
+</body>
+</html>
