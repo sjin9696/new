@@ -1,87 +1,154 @@
 <!--gallery.html-->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>gallery</title>
-	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="../../jqureyui/jquery-ui.min.css"></script>
-	<style>
-		*{margin: 0;padding: 0;line-height: 1.2;font-size: 16px;font-weight: nomal;}
-		img{vertical-align: middle;}
-		.gallery_list{
-			width: 100%;
-			margin: 0 auto;
-			display: block;
-		}
-		.gallery_item{
-			float: left; margin: 10px;
-		}
-		.gallery_detail {
-			position: fixed;
-			background-color: rgba(0,0,0,0.7);
-			width: 100%;height: 100%;left: 0;top: 0;
-			display: none;
-		}
-		.gallery_detail > img{
-			position: absolute;
-			left: 50%;
-			margin-left: -250px;
-			top: 50%;
-			margin-top: -250px;
-		}
-		#gallery_close{
-			color: #fff;font-weight: bold;font-size: 50px;
-			position: absolute;right: 30px; top: 10px;
-			text-decoration: none;
-		}
-	</style>
-	<script>
-		$(function(){
-//
-			$(".gallery_detail > img").draggble({
-				axis:"y"
-			})
-////			$(".gallery_detail > img").on("load",function(){
-////				/*var w = $(".gallery_detail > img").width();
-////				console.log(w);
-////				$(".gallery_detail > img").css("margin-left", -(w/2)+"px");*/
-////			})
-//
-			$(".gallery_item").click(function(){
-				$(".gallery_detail").css("display","block");
-				var img = $(this).attr("data-raw");
-				console.log(img);
-				$(".gallery_detail > img").attr("src",img);
+<html <head>
+<meta charset="UTF-8">
+<title>gallery</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="../../jqureyui/jquery-ui.min.css"></script>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+		font-size: 16px;
+		font-weight: nomal;
+	}
 
-			}) //(".gallery_item").click(function(){ end
-//
-			$(".gallery_detail").click(function(){
-				//기존상태로 변경한다.
-				$(".gallery_detail").css("display","");
-			}) //(".gallery_close").click(function(){ end
+	img {
+		vertical-align: middle;
+	}
+
+	.gallery_list {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.gallery_item {
+		float: left;
+		margin: 10px;
+	}
+
+	.gallery_detail {
+		position: fixed;
+		background-color: rgba(0, 0, 0, 0.7);
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		display: none;
+	}
+
+	.gallery_detail>img {
+		position: absolute;
+		left: 50%;
+		width: 1280px;
+		margin-left: -250px;
+		top: 50%;
+		margin-top: -250px;
+		transition: width 1s, margin 1s;
+		cursor: grab;
+	}
+
+	#gallery_close {
+		color: #fff;
+		font-weight: bold;
+		font-size: 50px;
+		position: absolute;
+		right: 30px;
+		top: 10px;
+		text-decoration: none;
+		z-index: 9999;
+	}
+
+	.scope {
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		width: 40px;
+	}
+
+	.scope>button {
+		width: 40px;
+		height: 40px;
+		display: 30px;
+	}
+
+	.scope>button {
+		color: #fff;
+		display: inline-block;
+		padding: 20px 0;
+	}
+
+</style>
+<script>
+	$(function() {
+		var expand = 1;
+		var imgWidth;
+
+		$(".gallery_detail > img").on("load",function(){
+			var w = $(".gallery_detail > img").width();
+			console.log(w);
+			w *= expand;
+			$(".gallery_detail > img").css("margin-left", -(w/2)+"px");
 		})
-	</script>
+
+		$("#expand").click(function() {
+			expand += 0.25;
+			console.log("#expand");
+			$(".gallery_detail > img").css("width", imgWidth*expand+"px").css("margin-left", +(imgWidth*expand/2)+"px");
+			$(".ratio").html(expand * 100 + "100%");
+		})
+		$("#contract").click(function() {
+			expand -= 0.25;
+			console.log("#contract");
+			$(".gallery_detail > img").css("width", imgWidth*expand+"px").css("margin-left", -(imgWidth*expand/2)+"px")
+			$(".ratio").html(expand * 100 + "100%");
+
+		})
+
+		//
+		$(".gallery_item").click(function() {
+			$(".gallery_detail").css("display", "block");
+			var img = $(this).attr("data-raw");
+			$(".gallery_detail > img").attr("src", img);
+
+		}) //(".gallery_item").click(function(){ end
+		//
+		$("#gallery_close").click(function() {
+			//기존상태로 변경한다.
+			$(".gallery_detail").css("display", "");
+		}) //(".gallery_close").click(function(){ end
+	})
+
+</script>
 </head>
+
 <body>
 	<div class="gallery_list">
-		<div class="gallery_item" data-raw = "http://placehold.it/1280x3000">
+		<div class="gallery_item" data-raw="http://placehold.it/1280x3000">
 			<img src="http://placehold.it/250x250/" alt="">
 		</div>
-		<div class="gallery_item" data-raw = "http://placehold.it/1280x3000/fab">
+		<div class="gallery_item" data-raw="http://placehold.it/1280x3000/fab">
 			<img src="http://placehold.it/250x250/fab" alt="">
 		</div>
-		<div class="gallery_item" data-raw = "http://placehold.it/1280x3000/abf">
+		<div class="gallery_item" data-raw="http://placehold.it/1280x3000/abf">
 			<img src="http://placehold.it/250x250/abf" alt="">
 		</div>
-		<div class="gallery_item" data-raw = "http://placehold.it/1280x3000/bfa">
+		<div class="gallery_item" data-raw="http://placehold.it/1280x3000/bfa">
 			<img src="http://placehold.it/250x250/bfa" alt="">
 		</div>
 	</div>
 
 	<div class="gallery_detail">
-		<a href="#" id="gallery_close">&times;</a>
 		<img src="http://placehold.it/500x500/bfa" alt="">
+		<a href="#" id="gallery_close">&times;</a>
+		<div class="scope">
+			<button id="expand">+</button>
+			<span class="ratio">100%</span>
+			<button id="contract">-</button>
+		</div>
 	</div>
 </body>
+
 </html>
