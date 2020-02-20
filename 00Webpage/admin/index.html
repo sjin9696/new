@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page Admin</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                dataType:"json",
+                type:"post",
+                url:"../php/lookupItem.php",
+                success:function(data){
+                    for(var i=0; i<data.length; i++){
+                        var item =
+                        '<tr>'+
+                            '<td>'+data[i].item_no+'</td>'+
+                            '<td><img src="'+data[i].item_img+'"></td>'+
+                            '<td>'+data[i].item_name+'</td>'+
+                            '<td>'+data[i].item_description+'</td>'+
+                            '<td>'+data[i].item_price+'</td>'+
+                            '<td><input disabled type="checkbox" class="event"></td>'+
+                            '<td><input disabled type="checkbox" class="dc"></td>'+
+                            '<td><input disabled type="checkbox" class="new"></td>'+
+                            '<td><input disabled type="checkbox" class="recommand"></td>'+
+                            '<td><input disabled type="checkbox" class="pop"></td>'+
+                            '<td><button class="delete">삭제</button></td>'+
+                        '</tr>';
+
+                        $("#list tbody").append(item);
+                        if(data[i].item_event == 1)
+                            $("tbody tr").eq(i).find(".event").prop("checked", true);
+                        if(data[i].item_dc == 1)
+                            $("tbody tr").eq(i).find(".dc").prop("checked", true);
+                        if(data[i].item_new == 1)
+                            $("tbody tr").eq(i).find(".new").prop("checked", true);
+                        if(data[i].item_recommand == 1)
+                            $("tbody tr").eq(i).find(".recommand").prop("checked", true);
+                        if(data[i].item_pop == 1)
+                            $("tbody tr").eq(i).find(".pop").prop("checked", true);
+                    }
+                },
+                error:function(data){
+                    console.log(data);
+                }
+            })
+        })
+    </script>
+    <style>
+        * {margin: 0; padding: 0;}
+        table {border-collapse: collapse;}
+        table th, table td {
+            text-align: center; border: 1px solid #ccc;
+            padding:0 10px;
+        }
+        table th:nth-child(6),
+        table th:nth-child(7),
+        table th:nth-child(8),
+        table th:nth-child(9),
+        table th:nth-child(10) {
+            width: 50px;
+        }
+        td img {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>상품설명</th>
+                <th>가격</th>
+                <th>이벤트</th>
+                <th>할인</th>
+                <th>신상품</th>
+                <th>추천</th>
+                <th>인기</th>
+                <th><button id="add">추가</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td><img src="http://placehold.it/250x200"></td>
+                <td>상품명</td>
+                <td>상품설명</td>
+                <td>10000</td>
+                <td><input disabled type="checkbox" class="event"></td>
+                <td><input disabled type="checkbox" class="dc"></td>
+                <td><input disabled type="checkbox" class="new"></td>
+                <td><input disabled type="checkbox" class="recommand"></td>
+                <td><input disabled type="checkbox" class="pop"></td>
+                <td><button class="delete">삭제</button></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <div class="add_data_wrap">
+        <div class="add_data">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>제품 명</td>
+                        <td><input type="text" id="item_name"></td>
+                    </tr>
+                    <tr>
+                        <td>제품 설명</td>
+                        <td><input type="text" id="item_desc"></td>
+                    </tr>
+                    <tr>
+                        <td>가격</td>
+                        <td><input type="number" id="item_price"></td>
+                    </tr>
+                    <tr>
+                        <td>이벤트</td>
+                        <td><input type="checkbox" id="item_event"></td>
+                    </tr>
+                    <tr>
+                        <td>할인</td>
+                        <td><input type="checkbox" id="item_dc"></td>
+                    </tr>
+                    <tr>
+                        <td>신상</td>
+                        <td><input type="checkbox" id="item_new"></td>
+                    </tr>
+                    <tr>
+                        <td>인기</td>
+                        <td><input type="checkbox" id="item_pop"></td>
+                    </tr>
+                    <tr>
+                        <td>추천</td>
+                        <td><input type="checkbox" id="item_recommand"></td>
+                    </tr>
+                    <tr>
+                        <td>이미지</td>
+                        <td><input type="text" id="item_img"></td>
+                    </tr>
+                    <tr>
+                        <td><button id="save">저장</button></td>
+                        <td><button id="cancel">취소</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
