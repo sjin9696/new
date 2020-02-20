@@ -44,7 +44,42 @@
                     console.log(data);
                 }
             })
-        })
+			$("#add").click(function(){
+				$(".add_data_wrap").css("display","block");
+			})
+			$("#save").click(function(){
+				if(!confirm("저장하시겠습니까?")) return;
+				$(".add_data_wrap").css("display","");
+				$.ajax({
+					type:"POST",
+					dataType:"json",
+					url:"../php/insertData.php",
+					data:{
+						"item_name" :$("#item_name").val(),
+						"item_desc" :$("#item_desc").val(),
+						"item_price" :$("#item_price").val(),
+						"item_event" :$("#item_event").prop("checked")?"1":"0",
+						"item_dc" :$("#item_dc").prop("checked")?"1":"0",
+						"item_new" :$("#item_new").prop("checked")?"1":"0",
+						"item_pop" :$("#item_pop").prop("checked")?"1":"0",
+						"item_recommand" :$("#item_recommand").prop("checked")?"1":"0",
+						"item_img" :$("#item_img").val()
+					},
+					success:function(data){
+						console.log("success :",data);
+					},
+					error:function(data){
+						console.log("error :",data);
+					}
+				}) //입력값 초기화 전에 해야 함..
+				$(".add_data input").val("").prop("checked",false);
+			});
+			$("#cancel").click(function(){
+				if(!confirm("취소하시겠습니까?")) return;
+				$(".add_data_wrap").css("display","");
+				$(".add_data input").val("").prop("checked",false);
+			});
+		})
     </script>
     <style>
         * {margin: 0; padding: 0;}
@@ -63,6 +98,19 @@
         td img {
             width: 80px;
         }
+		.add_data_wrap {
+			position: fixed;
+			width: 100%;height: 100%;
+			background-color: rgba(0,0,0,0.7);
+			left: 0;top: 0; display: none;
+		}
+		.add_data{
+			position: absolute;
+			background-color: #fff;
+			left: 50%;top: 50%;
+			transform: translate(-50%, -50%);
+			padding: 30px;
+		}
     </style>
 </head>
 <body>
